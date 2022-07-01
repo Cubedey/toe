@@ -34,7 +34,6 @@ a {
     display: flex;
     justify-content: center;
     text-align: center;
-    z-index: 1;
     position: relative;
     top: 13vh;
     margin-left: 10%;
