@@ -1,49 +1,52 @@
-#startingpage {
+.page {
     position: absolute;
     top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
-    background: black;
+    background: transparent;
     color: white;
-    opacity: .85;
     display: flex;
     justify-content: center;
     align-content: center;
     flex-direction: column;
-    z-index: 2;
 }
 
 #starttext {
+    overflow: auto;
     text-align: center;
+    width:55%;
+    height:45%;
+    border: solid rgb(172, 172, 172);
+    margin-left: auto;
+    margin-right: auto;
+    background:  rgba(0, 0, 0, 0.541);
+
 }
+
 
 body {
     margin: 0px;
     height: 100%;
     font-family: monospace;
-    background: #FFE98E;
+    background: black;
     font-size: 18px;
 }
 
-a {
-    color: inherit;
-}
-
-#game {
-    display: flex;
+.game {
+    display: none;
+    color:white;
     justify-content: center;
     text-align: center;
     position: relative;
-    top: 13vh;
     margin-left: 10%;
     margin-right: 10%;
 }
 
-.choicepage {
-    display: none;
-}
+button:hover {
+filter: brightness(165%);
 
-#birth {
-    display: block;
+}
+.bigsq:hover {
+    filter: brightness(165%);
 }

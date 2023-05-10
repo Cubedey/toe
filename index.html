@@ -2,105 +2,50 @@
 <html>
 
     <head>
-        <title>Choose Story</title>
+        <link rel="shortcut icon" href="regulartoe.png"/>
+        <title>Advanced Toes</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="script.js" defer></script>
+        <script src="java.js" defer></script>
         <link rel="stylesheet" type="text/css" href="styles.css" defer>
 
     </head>
 
     <body>
-        <div id="startingpage">
-            <div id="starttext">
-                <h1>Life Simulator</h1><br>
-                <a href="#" onclick="start()">Start</a>
+        <div id="startingpage" class="page" style="z-index: 3;">
+            <div id="starttext" >
+                <h2 id="starttextheader" style="margin-top:2%;margin-bottom: 0;">Choose A Game</h2>
+                <div style="display:flex;justify-content:center;">
+                    <div style="margin-inline:15%">
+                        <h4>Regular Game</h4>
+                <button onclick="start(1)" style="margin:0px;color:transparent;background-color: transparent;"><img style="width: 150px;height:150px;border: 5px solid gray;" src="regulartoe.png"></button>
+            </div>
+            <div style="margin-inline:15%">
+                <h4>Squared Game</h4>
+                <button onclick="start(2)" style="margin:0px;color:transparent;background-color: transparent;"><img style="all: unset;width: 150px;height:150px;border: 5px solid gray;" src="bigintoe.png"></button>
+                    </div>
+
+            </div>
             </div>
         </div>
-        <div id="game">
-            <div id="EndingsUnlocked"></div>
-            <div class="choicepage" id="birth" leftname="Early" rightname="Late" middlename="Normal" left="preschool" middle="1st" right="5th">
-                <p>Welcome to Life!!!! Woooooo! You've been getting kinda of bored living life as a fetus. Do you want to get born early, a normal time, or late?</p>
-            </div>
-            <div class="choicepage" id="preschool" leftname="Numbers" rightname="Alphabet" left="1st" right="1st">
-                <p>After popping out early, like the overachiever you are, your parents place you in preschool. Do you try and learn the numbers or the alphabet?</p>
-            </div>
-            <div class="choicepage" id="1st" leftname="Study" rightname="Friends" left="highschool" right="highschool">
-                <p>You've entered first grade with everyone else. Do you choose to study hard for all the years or focus more on making friends?</p>
-            </div>
-            <div class="choicepage" id="highschool" leftname="Study Harder" rightname="Network" left="college" right="networking">
-                <p>Wooo you've graduated middleschool! Have fun in highschool! Do you want to study harder than you ever have before or try and make some connections to better your chances at employment and friends.</p>
-            </div>
-            <div class="choicepage" id="networking" leftname="College" rightname="Internship" left="college" right="internship">
-                <p>Using your new contacts you can apply for an internship at "insert company name here" or go to college. After all, your network is your networth</p>
-            </div>
-            <div class="choicepage" id="college" leftname="PHD" rightname="Two Year Degree" middlename="Bachelor's Degree" left="becomeprof" leftreq="requires:Numbers/Alphabet,Study,Study Harder" leftalt="failcollege" middle="4yeardegree" middlereq="requires:Study,Study Harder" middlealt="failcollege" right="2yeardegree">
-                <p>Now that you've decided to go to college, would you like to try for a PHD, a bachelor's degree, or a 2 year degree? <span style="color:red;">Warning: you can fail if you didn't study enough.</span> </p>
-            </div>
-            <div class="choicepage" id="2yeardegree" leftname="Family" rightname="Job" left="succeedfamily" leftreq="requires:Friends/Network" leftalt="failfamily" right="internship">
-                <p>You've chosen the path of the 2yeardegree. Would you like to find a lover and start a family while trying to get your degree or find a job?</p>
-            </div>
-            <div class="choicepage" id="4yeardegree" continue="internship">
-                <p>You've succeeded at your 4 year degree!!! Good job. So uh i got lazy and didnt want to codea anymore so your only option is to get a job now. </p>
-            </div>
-            <div class="choicepage" id="succeedfamily" continue="internship">
-                <p>Wooooo you've succeeded in getting a significant other and "insert number" of kids! Now all that's left to do in life is getting a job.</p>
-            </div>
-            <div class="choicepage" id="failfamily" continue="diehomeless">
-                <p>Big sadge, you didn't network enough to have any chance of love :((((. You fail at having a lover and a family.</p>
-            </div>
-            <div class="choicepage" id="diehomeless">
-                <p>You've ended up dying alone and homeless as you had neither a job or a family.</p>
-            </div>
-            <div class="choicepage" id="internship" continue="ceo">
-                <p>Nice! You've successfully become an intern at "insert company name here."</p>
-            </div>
-            <div class="choicepage" id="ceo" continue="diewealthywitfam" continuereq="takes:succeedfamily" continuealt="diewealthywitnofam">
-                <p>Wonderful! Your hard work at "insert company name here" has been noticed by the board of directors. You have been promoted to ceo.</p>
-            </div>
-            <div class="choicepage" id="diewealthywitnofam">
-                <p>You have managed to aquire vast riches and wealth, but lack a true love and family when you die.</p>
-            </div>
-            <div class="choicepage" id="diewealthywitfam">
-                <p>Good job! You got both a family and all the riches you could ever want. You die feeling fullfilled.</p>
-            </div>
-            <div class="choicepage" id="failcollege" continue="college">
-                <p>Uh oh, your classes were too hard and you've flunked off your path. Maybe try something a bit easier?</p>
-            </div>
-            <div class="choicepage" id="becomeprof" continue="marry+die">
-                <p>Wooo! You've succesfully completed your PHD and have become a professor in <span id="chosenspecialization">Biology</span> at "insert dope college name here."</p>
-            </div>
-            <div class="choicepage" id="marry+die">
-                <p>You've managed to meet and marry your true love in the form of a fellow professor. You die feeling loved and proud of your work.</p>
-            </div>
-            <div class="choicepage" id="5th" leftname="Continue Homeschooling" rightname="Beg!" left="stayhomeschool" right="parentsdeny">
-                <p>Because you chose to catch the late worm you've been homeschooled till 5th grade. Would you like to beg your parents to let you go to public school or continue on your homeschooled path?</p>
-            </div>
-            <div class="choicepage" id="stayhomeschool" leftname="Join 'Religion'" rightname="Deny Them" left="cult" right="stophighschool">
-                <p>You decided public school is overrated and you love your parents too much to leave them. How could this go wrong? Your parents ask you to take a bigger role in their local religion. Do you take the offer?</p>
-            </div>
-            <div class="choicepage" id="cult" continue="satanic">
-                <p>You've successfully joined there religion. Uh oh. You find out it's actually a cult!</p>
-            </div>
-            <div class="choicepage" id="satanic" continue="fbidie">
-                <p>After your parents eventually die you become the leader of the cult. For fun you decide to make the cult satanic worshipers that sacrifice dogs to your one above/below/sideways/omnipresent.</p>
-            </div>
-            <div class="choicepage" id="fbidie">
-                <p>Oh, no! You've been caught stabbing dogs as a hobbie. The fbi raids your place of worship and in your final stand you take down seven whole fbi agents before being shot to death.</p>
-            </div>
-            <div class="choicepage" id="stophighschool" continue="cps">
-                <p>Your parents are upset with you for your actions! They have vowed to never let you enter a public highschool or even teach you. Lucky for you you know that that's a crime and report them to the police. What did they ever do for you anyway?</p>
-            </div>
-            <div class="choicepage" id="cps" continue="highschool">
-                <p>Cps has taken you away from your awful parents and have placed you with a foster home. It's time to start highschool.</p>
-            </div>
-            <div class="choicepage" id="parentsdeny" leftname="Respect Their Wishes
-            " rightname="Break Things" left="stophighschool" right="eventualhighschool">
-                <p>Your parents have denyed your plea to enter a public school. Maybe they'll eventually let you enter public school orrrr you could <span style="color:red">break all of their possesions.</span></p>
-            </div>
-            <div class="choicepage" id="eventualhighschool" continue="highschool">
-                <p>Your parents have noticed your pain and acceptance of their choice to stop you from going to public school and have decided to let you enter a public highschool. Yay!</p>
-            </div>
+        <div id="game1" class="page" style="z-index: 2;display: none;">
+            <div id="board1" style="text-align: center;
+            width:45%;
+            height:85%;
+            border: solid rgb(172, 172, 172);
+            margin-left: auto;
+            margin-right: auto;">
+        </div>
             
+        </div>
+        <div id="game2" class="page" style="z-index: 1;display: none;">
+            <div id="board2" style="text-align: center;
+            width:45%;
+            height:85%;
+            border: 5px solid rgb(172, 172, 172);
+            margin-left: auto;
+            margin-right: auto; display:flex;flex-wrap: wrap;justify-content:left;">
+        </div>
+        
         </div>
     </body>
 
