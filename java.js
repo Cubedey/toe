@@ -168,25 +168,25 @@ function seeifwinner2() {
 }
 function whowin(arr) {
     for (x = 0; x < arr.length; x++) {
-        if ((arr[x][0] == arr[x][1] && arr[x][1] == arr[x][2]) && (arr[x][0] != "")) {
+        if ((arr[x][0] == arr[x][1] && arr[x][1] == arr[x][2]) && (arr[x][0] != "") && (arr[x][0] != "-")) {
             return arr[x][0]
         }
     }
     for (x = 0; x < arr.length; x++) {
-        if ((arr[0][x] == arr[1][x] && arr[1][x] == arr[2][x]) && (arr[0][x] != "")) {
+        if ((arr[0][x] == arr[1][x] && arr[1][x] == arr[2][x]) && (arr[0][x] != "") && (arr[x][0] != "-")) {
 
             return arr[0][x]
         }
     }
     for (x = 0; x < arr.length; x += 2) {
-        if ((arr[x][0] == arr[1][1] && arr[1][1] == arr[2 - x][2]) && (arr[x][0] != "")) {
+        if ((arr[x][0] == arr[1][1] && arr[1][1] == arr[2 - x][2]) && (arr[x][0] != "") && (arr[x][0] != "-")) {
 
             return arr[x][0]
         }
     }
     for (x = 0; x < arr.length; x++) {
         for (z = 0; z < arr.length; z++) {
-            if (arr[x][z] == "") {
+            if (arr[x][z] == "" || arr[x][z] == "-") {
                 return "none"
             }
 
