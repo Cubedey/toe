@@ -27,7 +27,7 @@ function start(x) {
 
         for (y = 1; y < 10; y++) {
             let d = document.createElement("div")
-            d.style = "width:33.33%;height:33.33%;margin:0px; display:flex;flex-wrap:wrap"
+            d.style = "width:33.33%;height:33.33%;vertical-align:top;margin:0px; display:flex;flex-wrap:wrap"
             d.id = y.toString()
             d.classList.add("bigsq")
 
@@ -75,8 +75,8 @@ function board2click(x) {
     let d = document.getElementById(x)
     let currentboard = Math.floor(x / 10)
     if ((currentboard == boardrequired) || (freespace == true)) {
-        freespace = false
         if (d.innerText != "X" && d.innerText != "O") {
+            freespace = false
             d.innerText = getWhosTurn()
             if (document.getElementById(boardrequired.toString()) != null) {
                 document.getElementById(boardrequired.toString()).style.border = "none"
@@ -97,7 +97,6 @@ function board2click(x) {
             } else {
                 boardrequired = x % 10
             }
-            seeifwinner2()
             if (document.getElementById(boardrequired.toString()).classList.contains("done")) {
                 freespace = true
             }
@@ -107,6 +106,8 @@ function board2click(x) {
                 dd.style.margin = "-10px"
                 dd.style.zIndex = "10"
             }
+            seeifwinner2()
+
             movesmade++
 
         }
